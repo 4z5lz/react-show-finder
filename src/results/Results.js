@@ -7,7 +7,7 @@ class Results extends Component {
         const { items } = this.props;
         
         return (
-                <div>
+                <div className="columns is-multiline">
                     {items.map(item => (
                         <Movie key={item.id} item={item} />
                     ))}

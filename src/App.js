@@ -7,10 +7,14 @@ class App extends Component {
     render() {
         
         return (
-                <div>
-                    <Header />
-                    <Results items={searchResults} />
-                </div>
+                <section className="section">
+                    <div className="container is-fluid">
+                        <div className="heading">
+                            <Header />
+                        </div>
+                        <Results items={searchResults} />
+                    </div>
+                </section>    
         );
     }
 };
