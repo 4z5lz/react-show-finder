@@ -5,11 +5,22 @@ import Toggle from './Toggle';
 class Header extends Component {
     render () {
         
-        return (
-                <div>
-                    <Search buttonText={'Search'} />
-                    <Toggle />
-                </div>
+        return (                            
+                <nav className="nav has-shadow" id="top">
+                    <div className="container">
+                        <div className="nav-left">
+                            <Search buttonText={'Search'} />                            
+                        </div>
+                        <span className="nav-toggle">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                        <div className="nav-right nav-menu">
+                            <Toggle />
+                        </div>
+                    </div>
+                </nav>                
         );
     }
 };

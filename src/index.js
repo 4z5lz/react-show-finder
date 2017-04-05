@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+
 import 'bulma/css/bulma.css';
 import './index.css';
+
+import App from './components/App/index';
 
 ReactDOM.render(
   <App />,
