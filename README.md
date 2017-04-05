@@ -1,3 +1,9 @@
+My notes:
+
+1 lesson : https://github.com/assafg/advaced-react-workshop/tree/basic5 git checkout basic5
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
