@@ -1,22 +1,19 @@
-import React, { Component } from 'react';
-import Header from './Header';
-import Results from './results/Results';
-import {searchResults} from './results/mock_data';
+import React, {Component} from 'react';
+import {Router, Route, IndexRoute, hashHistory} from 'react-router';
+import Main from './pages/main.js';
+import Search from './pages/search/index';
 
 class App extends Component {
-    render() {
-        
+
+    render () {
         return (
-                <section className="section">
-                    <div className="container is-fluid">
-                        <div className="heading">
-                            <Header />
-                        </div>
-                        <Results items={searchResults} />
-                    </div>
-                </section>    
+            <Router history={hashHistory}>
+                <Route path="/" component={Main}>
+                    <IndexRoute component={Search} />
+                </Route>
+            </Router>
         );
     }
-};
+}
 
 export default App;
