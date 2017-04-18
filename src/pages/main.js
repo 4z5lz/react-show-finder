@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import Header from './Header';
 
-import 'bulma/css/bulma.css';
+import Header from '../components/Header.js';
+import Footer from '../components/Footer.js';
+
+// import 'bulma/css/bulma.css';
 import './main.css';
 
 class Main extends Component {
@@ -10,7 +12,12 @@ class Main extends Component {
         return (
             <div>
                 <Header />
-                {this.props.children}
+                <div className="section">
+                    <div className="container">
+                        {this.props.children}
+                    </div>
+                </div>
+                <Footer />                
             </div>
         );
     }

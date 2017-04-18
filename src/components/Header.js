@@ -1,15 +1,28 @@
 import React, { Component } from 'react';
-import Search from './Search';
-import Toggle from './Toggle';
+
+import SearchBox from '../components/SearchBox.js';
+import Toggle from '../components/Toggle.js';
 
 class Header extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {};
+    }
+    
+    goToHome () {
+        this.props.router.push(`/`)
+    }
+    
     render () {
-        
-        return (                            
+        return (
                 <nav className="nav has-shadow" id="top">
                     <div className="container">
                         <div className="nav-left">
-                            <Search buttonText={'Search'} />                            
+                            <a onClick={ this.goToHome.bind(this) } className="icon">
+                                <i className="fa fa-home"></i>
+                            </a>
+                            <SearchBox />
                         </div>
                         <span className="nav-toggle">
                             <span></span>
@@ -17,10 +30,10 @@ class Header extends Component {
                             <span></span>
                         </span>
                         <div className="nav-right nav-menu">
-                            <Toggle />
+                            <Toggle />                            
                         </div>
                     </div>
-                </nav>                
+                </nav>
         );
     }
 };
