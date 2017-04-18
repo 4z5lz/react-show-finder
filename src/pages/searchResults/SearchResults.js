@@ -1,20 +1,39 @@
 import React, { Component, PropTypes } from 'react';
+import { Row } from './Row';
 
-class Search extends Component {
-    
-    static propTypes = {
-        buttonText: PropTypes.string
+const chunkRows = (array) => {
+    if (!array) {
+        return [];
     }
-    
-    static defaultProps = {
-        buttonText: 'Search!'
+    const res = [];
+    let i, j, chunk = 5;
+    for (i = 0, j = array.length; i < j; i += chunk) {
+        res.push(array.slice(i,i+chunk));
     }
-    
-    render () {
+    return res;
+};
+
+const Results = ({searchResults, onTileSelect}) => (
+    <div>
+        <div className="columns">
+            <div className="column is-8">
+                <div className="title">Search results</div>
+            </div>
+            <div className="column is-4 has-text-right"></div>
+        </div>
+            
+        <hr/>
+        {chunkRows(searchResults).map((chunk, i) => (
+            <Row
+                key={`row-${i}`}
+                items={chunk}
+                onTileSelect={onTileSelect}
+            />
+        ))}
+    </div> 
+);
         
-        const {buttonText} = this.props;
-        
-        return (
+        /*return (
                 <div>
                     <div className="columns">
                         <div className="column is-8">
@@ -47,8 +66,8 @@ class Search extends Component {
 
                     </div>
                 </div>
-        );
-    }
-};
+        );*/
+    // }
+// };
 
-export default Search;
+export default Results;
